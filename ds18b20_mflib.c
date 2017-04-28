@@ -41,7 +41,7 @@
  *
  */
 
-#include "mf_ds18b20.h"
+#include "ds18b20_mflib.h"
 
 extern volatile uint32_t time_us;
 
