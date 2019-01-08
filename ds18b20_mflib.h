@@ -1,15 +1,15 @@
-/* 	ds18b20_mfib.h -- H header file for handling the 1-wire DS18B20 digital thermometer
+/*  ds18b20_mfib.h -- H header file for handling the 1-wire DS18B20 digital thermometer
  *
- *  Created on: 	4.01.2017
- *  Author: 			Marek Frydrysiak <marek.frydrysiak@gmail.com>
- *	Description:
- *			Include the appropriate hal lib and select the 1-wire signal line port and pin.
- *			For more information, see the .c file!
+ *  Created on:     4.01.2017
+ *  Author:         Marek Frydrysiak <marek.frydrysiak@gmail.com>
+ *  Description:
+ *      Include the appropriate hal lib and select the 1-wire signal line port and pin.
+ *      For more information, see the .c file!
  *
- * 	Copyright (C) 2017 Marek Frydrysiak
+ *  Copyright (C) 2017 Marek Frydrysiak
  *
- * 	This software may be modified and distributed under the terms
- * 	of the MIT license.  See the LICENSE file for details.
+ *  This software may be modified and distributed under the terms
+ *  of the MIT license.  See the LICENSE file for details.
  *
  */
 
@@ -17,16 +17,16 @@
 #define _DS18B20_MFLIB_H_
 
 #include <math.h>
-#include "stm32f4xx_hal.h"			// <-- choose the hal lib appropriate for your device
+#include "stm32f4xx_hal.h"          // <-- choose the hal lib appropriate for your device
 
-#define TXRX_PORT	GPIOA					// <-- select the 1-wire signal line port (GPIOA or GPIOB or ...)
-#define TXRX_PIN	GPIO_PIN_10		// <-- select the 1-wire signal line pin (GPIO_PIN_1 or GPIO_PIN_2 or ...)
+#define TXRX_PORT   GPIOA           // <-- select the 1-wire signal line port (GPIOA or GPIOB or ...)
+#define TXRX_PIN    GPIO_PIN_10     // <-- select the 1-wire signal line pin (GPIO_PIN_1 or GPIO_PIN_2 or ...)
 
-#define READ_ROM_CMD_BYTE		0x33
-#define SKIP_ROM_CMD_BYTE		0xCC
+#define READ_ROM_CMD_BYTE       0x33
+#define SKIP_ROM_CMD_BYTE       0xCC
 
-#define CONVERT_T_CMD					0x44
-#define READ_SCRATCHPAD_CMD		0xBE
+#define CONVERT_T_CMD           0x44
+#define READ_SCRATCHPAD_CMD     0xBE
 
 void delay_us(uint32_t t);
 uint8_t ds18b20_init_seq(void);
